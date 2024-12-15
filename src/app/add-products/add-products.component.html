@@ -1,0 +1,91 @@
+<div >
+  <app-sidenav style="position: absolute;"></app-sidenav>
+</div>
+@if(loading == true){
+  <mat-progress-bar mode="indeterminate" style="position: fixed; width: 100%;"></mat-progress-bar>
+}
+<div class="content">
+ <div class="fw-bold">Add Products</div>
+
+    <div class="col-lg-8 mx-auto">
+  
+   <form action="" #form="ngForm">
+    <mat-form-field class="w-100 mat">
+        <mat-label>Product Name</mat-label>
+        <input [(ngModel)]="pName" #pname="ngModel" matInput required name="productName">
+        <mat-error>Please fill out this field</mat-error>
+    </mat-form-field>
+    
+      
+     <div class="d-flex gap-3">
+       <mat-form-field class="w-100 mat" floatLabel="always">
+           <mat-label>Price</mat-label>
+           <input [(ngModel)]="price" matInput type="number" class="text-end" placeholder="0" (change)="calculateDiscount()" required name="price">
+           <span matTextPrefix>N&nbsp;</span>
+           <span matTextSuffix>.00</span>
+         <mat-error>Please fill out this field</mat-error>
+         </mat-form-field>
+      
+         <mat-form-field class="w-100 mat">
+          <mat-label>Discount</mat-label>
+          <input [(ngModel)]="discount" matInput type="number" max="100" (change)="calculateDiscount()" name="discount">
+        
+          <mat-error>enter a pecentage betwen 0-100</mat-error>
+        </mat-form-field>
+     </div>
+   
+     <div class="d-flex gap-3">
+       <mat-form-field class="w-100 mat">
+           <mat-label>Sale Price</mat-label>
+           <input [(ngModel)]="salePrice" [disabled]="true" matInput type="number" name="sprice">
+         </mat-form-field>
+      
+         <mat-form-field class="w-100 mat">
+          <mat-label>Quantity</mat-label>
+          <input [(ngModel)]="quantity" matInput type="number" required name="quantity">
+          <mat-error>Please fill out this field</mat-error>
+        </mat-form-field>
+     </div>
+     <mat-form-field class="w-100">
+       <mat-label>Description</mat-label>
+       <textarea name="description" matInput [(ngModel)]="description" name="description"></textarea>
+     </mat-form-field>
+     
+     <button mat-stroked-button data-bs-toggle="modal" data-bs-target="#staticBackdrop">Upload Image</button> <small class="text-white rounded-1 bg-success p-1 mx-2" *ngIf="productImage">uploaded</small> 
+     @if(!productImage){
+      <small class="text-white rounded-1 bg-danger p-1 mx-2">No image</small>
+     }  <br><br>
+  
+     <!-- Modal -->
+    
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Upload Product Image</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                <input type="file" [required]="true" name="pimage" class="form-control" (change)="convertToBase64($event)">
+                <div style="height: 300px; overflow: hidden;" class="col-12">
+                  <img [src]="base64" alt="" class="w-100">
+                </div>
+               
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-bs-dismiss="modal" (click)="uploadImage()" class="btn text-white" style="background-color: #031633;">Upload</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+     @if (form.valid) { 
+          <button mat-stroked-button (click)="addProduct()" class="w-50" style="color: white; background-color: #031633;">Add Product</button>
+      }
+
+   </form>
+   </div>
+
+
+</div>

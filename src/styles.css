@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@media (max-width:768px) {
+    .mat{
+        height: 74px;
+    }
+    .content{
+        padding: 70px 15px;
+        
+     }
+     .filterI{
+        border: none;
+        width: 100px;
+    
+    }
+
+}
+
+@media (min-width:768px) {
+
+.content{
+    margin: 0 0 0 264px;
+    padding: 0 15px;
+    z-index: -1;
+}
+
+}
+
+
+:host {
+    display: flex;
+  }
+
+  .example-pizza-party {
+    color: hotpink;
+  }
+.tb{
+    font-size: 0.9rem;
+    z-index: -1;
+}
+body{
+    overflow-x: hidden;
+}
+.hover:hover{
+    background-color: aliceblue;
+  }
+  .z-i{
+    z-index: 4;
+  }

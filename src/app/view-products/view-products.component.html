@@ -1,0 +1,69 @@
+<div >
+    <app-sidenav style="position: absolute;"></app-sidenav>
+</div>
+<div class="content ">
+ <div class="fw-medium">Products</div>
+ <div>
+  <span class="filter p-2">
+    <input type="text" (keyup)="filter()" [(ngModel)]="filterInput" placeholder="Filter" class="filterI">
+    <img src="https://img.icons8.com/?size=100&id=7695&format=png&color=A8A4A4" alt="" width="23">
+  </span>
+  <select name="" id="" class="select-s">
+    <option value="">New</option>
+    <option value="">Old</option>
+  </select>
+ </div>
+ <table class="table tb">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Sale Price</th>
+        <th scope="col">Image</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let item of displayProducts let i = index" (click)="show(i)">
+        <td data-bs-toggle="modal" data-bs-target="#exampleModal" >{{item.product_name}}</td>
+        <td data-bs-toggle="modal" data-bs-target="#exampleModal" >{{item.sale_price}}</td>
+        <td data-bs-toggle="modal" data-bs-target="#exampleModal"  style="height: 50px; width: 50px; overflow: hidden;">
+            <img [src]="item.product_image" alt="" style="width: 50px;">
+        </td>
+        <td>
+          <button mat-flat-button class="rounded-lg" (click)="del(i); $event.stopPropagation()" >
+            <img src="https://img.icons8.com/?size=100&id=67884&format=png&color=EE0A0A" alt="" style="width: 25px;" >
+          </button>
+          </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <div *ngIf="displayProducts.length == 0" class="fs-3 text-secondary text-center ">No items in stock</div>
+
+
+<!-- Modal -->
+<div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Product Information</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex">
+       <img [src]="productImg" alt="" class="w-50">
+       <div class="mx-2">
+        <div class="fw-medium">{{productName}}</div>
+        <div>{{price}}</div>
+        <div>{{salePrice}}</div>
+        <div>{{discount}}</div>
+        <div>{{quantity}}</div>
+        <div>{{description}}</div>
+       </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+  </div>

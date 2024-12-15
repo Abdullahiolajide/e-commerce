@@ -1,0 +1,54 @@
+<section class="py-5" style="height: 100vh; background-color:  #94a9c9;">
+    <div class="container d-flex" style="height: 75vh;">
+        <main class="col-lg-10 border mx-auto d-flex justify-content-center align-items-center rounded-3 shadow-lg">
+            <div class="border w-50 h-100 bgimg">
+
+                <div class="text-white text-center justify-content-center align-items-center py-5">
+                    <div class="py-5 my-5 px-5">
+                        <h1>Shop with us today</h1>
+                        <p class="fs-5">This is where you'll find everything. If we don't have it, no one does.</p>
+                    </div>
+                </div>
+               
+            </div>
+            <form action="" #form="ngForm" class="border w-50 py-4 px-3 bg-light h-100">
+             <h2 class="text-center py-2">Sign In As Seller </h2>
+             <p class="text-center">Don't have an account? <a href="#" style="color: #031633;">Register</a></p>
+            
+             <div class="my-3">
+                <input type="email" name="email" placeholder="Email" class="form-control py-2" [(ngModel)]="email">
+        </div>
+             <div class="my-3">
+                <input type="text" name="password" placeholder="Password" class="form-control py-2" [(ngModel)]="password">
+                
+             </div>
+             <div class="text-danger">{{failError}}</div>
+            
+             <div class="my-3">
+                <input type="submit" value="Sign In" class="form-control py-2 text-white fw-medium" style="background-color: #031633;" [disabled]="form.invalid" (click)="signIn()">
+             </div>
+             <div style="display: flex; align-items: center; text-align: center;">
+                <hr style="flex: 1;" />
+                <span style="padding: 0 10px;">Continue with</span>
+                <hr style="flex: 1;" />
+              </div>
+
+              <div class="d-flex justify-content-center my-2 gap-3">
+                <a href="" class="border border-black rounded-3 w-50 py-2 text-center text-dark text-decoration-none">
+                    <div>
+                        <img width="28" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/><span class="mx-1"> Google</span>
+                    </div>
+                </a>
+                <a href="" class="border border-black rounded-3 w-50 py-2 text-center text-dark text-decoration-none">
+                    <div>
+                        <img width="24" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpoGhnWW9wN-P9X7Ckt3y0snA59WDlcsjeHg&s" alt=""><span class="mx-1"> Apple</span>
+                    </div>
+                </a>
+              </div>
+              
+
+            </form>
+        </main>
+    </div>
+    
+</section>

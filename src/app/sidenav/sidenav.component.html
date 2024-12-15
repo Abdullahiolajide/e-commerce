@@ -1,0 +1,84 @@
+
+<div class="backdrop" (click)="backdp()"></div>
+<div class="d-flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar-toggle">
+        <div class="sidebar-logo">
+            <a href="#">TT Store</a>
+        </div>
+        <!-- Sidebar Navigation -->
+        <ul class="sidebar-nav p-0">
+            <li class="sidebar-header">
+                    <b class="fw-bold fs-7">Menu</b>
+            </li>
+            <li class="sidebar-item">
+                <a routerLink="/seller_dashboard" class="sidebar-link fs-6">
+                    <i class="lni lni-user"></i>
+                    <span> Dashboard</span>
+                </a>
+            </li>
+            <li class="sidebar-item" (click)="select($event)">
+                <a routerLink="seller_dashboard" class="sidebar-link fs-6">
+                    <i class="lni lni-agenda"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li class="sidebar-header">
+                <b class="fw-bold fs-7">Management</b>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed has-dropdown fs-6" data-bs-toggle="collapse"
+                    data-bs-target="#auth" aria-expanded="true" aria-controls="auth">
+                    <i class="lni lni-protection"></i>
+                    <span> Products</span>
+                </a>
+                <ul id="auth" class="sidebar-dropdown list-unstyled collapse bg" data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a routerLink="/seller_dashboard/add_products" class="sidebar-link fs-6">Add Products</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a routerLink="/seller_dashboard/view_products" class="sidebar-link fs-6">View Products</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a routerLink="seller_dashboard" class="sidebar-link fs-6">
+                    <i class="lni lni-popup"></i>
+                    <span> Notification</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a routerLink="seller_dashboard" class="sidebar-link fs-6">
+                    <i class="lni lni-cog"></i>
+                    <span> Setting</span>
+                </a>
+            </li>
+        </ul>
+        <!-- Sidebar Navigation Ends -->
+        <div class="sidebar-footer">
+            <a routerLink="" (click)="logout()" class="sidebar-link fs-6">
+                <i class="lni lni-exit"></i>
+                <span> Logout</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Sidebar Ends -->
+    <!-- Main Component -->
+    <div class="main bg-success">
+        <nav class="navbar navbar-expand border">
+            <button class="toggler-btn" type="button" (click)="toggle()">
+                <i class="lni lni-text-align-left"></i>
+            </button>
+            <div  class="col-12">
+                    <div class="float-end d-flex justify-content-center align-items-center hover mx-2 px-3 my-1 rounded-3" style="cursor: pointer; z-index: 3;">
+                        <div class="fw-medium mx-1"> Abdulllahii </div>
+                        <span style="width: 45px; height: 45px;" class="rounded-circle overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-3bJfR-R5MugSOzqTOzuW4j7KdDxAvAePaQ&s" alt="" style="width: 45px;">
+                        </span>  
+                    </div>
+            </div>
+            
+        </nav>
+        
+    </div>
+</div>

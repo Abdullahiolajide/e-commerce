@@ -1,0 +1,69 @@
+<section class="py-5" style="height: 100vh; background-color:  #94a9c9;">
+    <div class="container d-flex">
+        <main class="col-lg-10 border mx-auto d-flex justify-content-center align-items-center rounded-3 shadow-lg">
+            <div class="border w-50 h-100 bgimg">
+
+                <div class="text-white text-center justify-content-center align-items-center py-5">
+                    <div class="py-5 my-5 px-5">
+                        <h1>Shop with us today</h1>
+                        <p class="fs-5">This is where you'll find everything. If we don't have it, no one does.</p>
+                    </div>
+                </div>
+               
+            </div>
+            <form action="" #form="ngForm" class="border w-50 py-4 px-3 bg-light">
+             <h2 class="text-center py-2">Create Seller Account</h2>
+             <p class="text-center">Already have an account? <a href="#" style="color: #031633;">Sign In</a></p>
+             <div class="my-3 d-flex gap-2">
+                <input type="text" name="firstname" placeholder="First Name" class="form-control w-50 py-2" [(ngModel)]="firstname" #fname="ngModel" [required]="true" [class.is-invalid]="fname.invalid && fname.dirty"
+                > 
+                <input type="text" name="lastname" placeholder="Last Name" class="form-control w-50 py-2" [(ngModel)]="lastname" #lname="ngModel" [required]="true" [class.is-invalid]="lname.invalid && lname.dirty"
+                >
+            </div>
+            <small *ngIf="fname.invalid && fname.dirty" class="text-danger" >Your firstname is required </small>
+            <small *ngIf="lname.invalid && lname.dirty" class="text-danger" >Your lastname is required </small>
+
+
+             <div class="my-3">
+                <input type="email" name="email" placeholder="Email" class="form-control py-2" [(ngModel)]="email" #e_mail="ngModel" [required]="true" [class.is-invalid]="e_mail.invalid && e_mail.dirty">
+            <small *ngIf="e_mail.invalid && e_mail.dirty" class="text-danger" >Your Email is required</small>
+        </div>
+             <div class="my-3">
+                <input type="text" name="password" placeholder="Password" class="form-control py-2" [(ngModel)]="password" #pword="ngModel" [required]="true" minlength="6" [class.is-invalid]="pword.invalid && pword.dirty">
+                <small *ngIf="pword.invalid && pword.dirty" class="text-danger" >
+                    <small *ngIf="pword.hasError('required')"> Your password is required</small>
+                    <small *ngIf="pword.hasError('minlength')">Password cannot be less than 6 characters</small>
+                </small>
+             </div>
+             <div class="my-3 pb-3">
+                <input type="checkbox" name="checkbox" [(ngModel)]="cbox" #checkbox="ngModel" [required]="true"> <span> I agree to <a href="#" class="text-dark">Terms & Conditions </a></span>
+             </div>
+             <div class="text-danger">{{failError}}</div>
+             <div class="my-3">
+                <input type="submit" value="Create Account" class="form-control py-2 text-white fw-medium" style="background-color: #031633;" [disabled]="form.invalid" (click)="signUp()">
+             </div>
+             <div style="display: flex; align-items: center; text-align: center;">
+                <hr style="flex: 1;" />
+                <span style="padding: 0 10px;">Or register with</span>
+                <hr style="flex: 1;" />
+              </div>
+
+              <div class="d-flex justify-content-center my-2 gap-3">
+                <a href="" class="border border-black rounded-3 w-50 py-2 text-center text-dark text-decoration-none">
+                    <div>
+                        <img width="28" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/><span class="mx-1"> Google</span>
+                    </div>
+                </a>
+                <a href="" class="border border-black rounded-3 w-50 py-2 text-center text-dark text-decoration-none">
+                    <div>
+                        <img width="24" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpoGhnWW9wN-P9X7Ckt3y0snA59WDlcsjeHg&s" alt=""><span class="mx-1"> Apple</span>
+                    </div>
+                </a>
+              </div>
+              
+
+            </form>
+        </main>
+    </div>
+    
+</section>

@@ -1,0 +1,22 @@
+.filter{
+    border: none;
+    border-bottom: 2px solid #031633;
+
+}
+.filterI{
+    border: none;
+
+}
+.select-s{
+    padding: 6px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    float: right;
+}
+
+@media (min-width: 768px){
+    .content{
+        margin-left: 264px;
+        padding: 60px 15px;
+    }
+}
