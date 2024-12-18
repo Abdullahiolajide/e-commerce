@@ -4,12 +4,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-additional-info',
   standalone: true,
-  imports: [MatButtonModule, MatStepperModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule,],
+  imports: [MatButtonModule, MatStepperModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, RouterLink],
   templateUrl: './additional-info.component.html',
   styleUrl: './additional-info.component.css'
 })
@@ -19,12 +20,22 @@ export class AdditionalInfoComponent {
   
   
   firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
+    firstCtrl: '',
   });
   secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    secondCtrl: '',
+    thirdCtrl: '',
   });
   isLinear = false;
+
+  addInfo(){
+    const additionalInfo = {
+      phone_number:this.firstFormGroup.firstCtrl,
+      address:this.secondFormGroup.secondCtrl,
+      zipcode:this.secondFormGroup.thirdCtrl
+    }
+    console.log(additionalInfo)
+  }
 
 
 }

@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css'
 })
@@ -28,15 +28,9 @@ export class SignInComponent {
       if(result.status == true){
         this.failError = '';
         this.route.navigate(['/seller_dashboard'])
-        localStorage.setItem('token', '1')
 
       }else{
         this.failError = result.message;
-        if(localStorage.getItem('token')){
-          localStorage.removeItem('token')
-
-        }
-
 
       }
     }, (error:any)=>{

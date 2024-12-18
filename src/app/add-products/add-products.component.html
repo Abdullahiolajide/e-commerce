@@ -51,7 +51,13 @@
        <textarea name="description" matInput [(ngModel)]="description" name="description"></textarea>
      </mat-form-field>
      
-     <button mat-stroked-button data-bs-toggle="modal" data-bs-target="#staticBackdrop">Upload Image</button> <small class="text-white rounded-1 bg-success p-1 mx-2" *ngIf="productImage">uploaded</small> 
+     <button mat-stroked-button data-bs-toggle="modal" data-bs-target="#staticBackdrop">Upload Image</button> <small class="text-white rounded-1 bg-success p-1 mx-2" *ngIf="imageUrl">uploaded</small> 
+     @if(!imageUrl && productImage !=''){
+      <div style="line-height: 20px;">
+        <small class=" rounded-1 p-1 mx-2 d-flex">Uploading... <mat-spinner style="width: 25px; height: 25px;"></mat-spinner></small>
+      
+      </div>
+     } 
      @if(!productImage){
       <small class="text-white rounded-1 bg-danger p-1 mx-2">No image</small>
      }  <br><br>
@@ -66,6 +72,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+              
                 <input type="file" [required]="true" name="pimage" class="form-control" (change)="convertToBase64($event)">
                 <div style="height: 300px; overflow: hidden;" class="col-12">
                   <img [src]="base64" alt="" class="w-100">
@@ -80,7 +87,7 @@
   </div>
 
     
-     @if (form.valid) { 
+     @if (form.valid && imageUrl) { 
           <button mat-stroked-button (click)="addProduct()" class="w-50" style="color: white; background-color: #031633;">Add Product</button>
       }
 

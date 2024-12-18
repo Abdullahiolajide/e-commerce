@@ -38,7 +38,8 @@
       
     </tbody>
   </table>
-  <div *ngIf="displayProducts.length == 0" class="fs-3 text-secondary text-center ">No items in stock</div>
+  <div *ngIf="products.length == 0" class="fs-3 text-secondary text-center ">No items in stock</div>
+  <div *ngIf="displayProducts.length == 0 && products.length !== 0" class="fs-3 text-secondary text-center ">Item not found</div>
 
 
 <!-- Modal -->
@@ -50,7 +51,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex">
-       <img [src]="productImg" alt="" class="w-50">
+       <img [src]="productImg" alt="" style="width: 50%;">
        <div class="mx-2">
         <div class="fw-medium">{{productName}}</div>
         <div>{{price}}</div>
