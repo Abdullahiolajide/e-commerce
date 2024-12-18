@@ -12,6 +12,9 @@
         width: 100px;
     
     }
+    .hover:hover{
+      background-color: aliceblue;
+    }
 
 }
 

@@ -10,6 +10,6 @@ import { SidenavComponent } from "../sidenav/sidenav.component";
   styleUrl: './seller-dashboard.component.css'
 })
 export class SellerDashboardComponent {
-    
+  
 }
 

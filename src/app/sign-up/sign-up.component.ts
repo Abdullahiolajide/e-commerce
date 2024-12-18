@@ -33,7 +33,7 @@ export class SignUpComponent {
       console.log(result)
       if(result.status == true){
         this.failError = '';
-        this.route.navigate(['/signin'])
+        this.route.navigate(['/stepperInfo'])
 
       }else{
         this.failError = result.message;
