@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
@@ -9,7 +10,8 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './sidenav.component.css'
 })
 export class SidenavComponent {
-  constructor(public route:Router){}
+  constructor(public route:Router, private http:HttpClient){}
+  public profileInfo:any = {}
   public backdrop:any = ''
   public sidebar:any = ''
   public listItems:any = ''
@@ -18,7 +20,12 @@ export class SidenavComponent {
     this.sidebar = document.querySelector("#sidebar");
 
     
+    this.http.get('http://localhost/projectEcommerce/get_profile.php', {withCredentials:true}).subscribe((result:any)=>{
+      console.log(result)
+      this.profileInfo = result.profile_info;
+    })
   }
+ 
   toggle(){
     this.ngOnInit()
       this.sidebar.classList.toggle("collapsed");

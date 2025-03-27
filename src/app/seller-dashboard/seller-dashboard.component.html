@@ -95,20 +95,26 @@
           <table class="table tb">
              <thead>
                <tr>
-                 <th class="rounded-start-3" style="background-color: #002363; color: white;" scope="col">Customer</th>
+                 <th class="rounded-start-3" style="background-color: #002363; color: white;" scope="col">S/N</th>
+                 <th class="max-w" style="background-color: #002363; color: white; max-width: 60px;" scope="">Customer</th>
+                 <th class="" style="background-color: #002363; color: white;" scope="col">Image</th>
                  <th style="background-color: #002363; color: white;" scope="col">Date</th>
                  <th style="background-color: #002363; color: white;" scope="col">Price</th>
-                 <th class="rounded-end-3" style="background-color: #002363; color: white;" scope="col">Product</th>
+                 <th class="" style="background-color: #002363; color: white;" scope="col">Product</th>
+                 <th class="rounded-end-3" style="background-color: #002363; color: white;" scope="col">Qty</th>
                </tr>
              </thead>
-             <tbody>
-                <tr>
-                 <td>Something</td>
-                 <td>Something</td>
+             <tbody >
+                <tr *ngFor="let order of ordersArray let i = index">
+                 <td>{{i+1}}</td>
+                 <td>{{order.email}}</td>
+                 <td><img src={{order.product_image}} alt="" width="30px"></td>
+                 <td>{{order.created_at|date:'shortDate'}}</td>
                  <td>
-                    N7853
+                    N{{order.sale_price}}
                  </td>
-                 <td>Infinix</td>
+                 <td>{{order.product_name}}</td>
+                 <td>{{order.quantity}}</td>
                </tr>
                
              </tbody>

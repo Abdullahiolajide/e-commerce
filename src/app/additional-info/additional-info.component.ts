@@ -5,6 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -15,26 +16,29 @@ import { RouterLink } from '@angular/router';
   styleUrl: './additional-info.component.css'
 })
 export class AdditionalInfoComponent {
-  // constructor(private _formBuilder: FormBuilder) {}
+  constructor(private http:HttpClient){};
   public _formBuilder:any = inject(FormBuilder)
+
   
   
   firstFormGroup = this._formBuilder.group({
-    firstCtrl: '',
+    phone_number: '',
   });
   secondFormGroup = this._formBuilder.group({
-    secondCtrl: '',
-    thirdCtrl: '',
+    address: '',
+    zipcode: '',
   });
   isLinear = false;
 
   addInfo(){
     const additionalInfo = {
-      phone_number:this.firstFormGroup.firstCtrl,
-      address:this.secondFormGroup.secondCtrl,
-      zipcode:this.secondFormGroup.thirdCtrl
+     ...this.firstFormGroup.value,
+     ...this.secondFormGroup.value
     }
     console.log(additionalInfo)
+    this.http.post('http://localhost/projectEcommerce/addInfo.php', additionalInfo, {withCredentials:true}).subscribe((response:any)=>{
+      console.log(response)
+    })
   }
 
 

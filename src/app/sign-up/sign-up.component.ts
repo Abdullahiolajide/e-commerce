@@ -29,11 +29,11 @@ export class SignUpComponent {
       password:this.password
     }
     console.log(sellerCredentials)
-    this.http.post('http://localhost/projectEcommerce/seller_signup.php', sellerCredentials).subscribe((result:any)=>{
+    this.http.post('http://localhost/projectEcommerce/seller_signup.php', sellerCredentials, {withCredentials:true}).subscribe((result:any)=>{
       console.log(result)
       if(result.status == true){
         this.failError = '';
-        this.route.navigate(['/stepperInfo'])
+        this.route.navigate(['/seller_dashboard/stepperInfo'])
 
       }else{
         this.failError = result.message;

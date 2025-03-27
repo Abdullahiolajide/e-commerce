@@ -1,0 +1,45 @@
+<app-navbar  class="pb-5 mb-5"></app-navbar>
+<div  class="pt-5 container" style="min-width: 1000px; width: 1230px;">
+<div class="mt-5 d-flex mx-auto">
+    
+    <app-customer-page class="col-3 bg-white rounded-3"></app-customer-page>
+    <div class="col-8 mx-3 bg-white rounded-3 overflow-y-scroll" style="box-shadow: 0 1px 5px rgb(232, 232, 232); height: 84vh;">
+       <!-- ORDER LIST BEGINNING  -->
+       @if(backk){
+        <div style="border-bottom: 1px solid rgb(228, 228, 228);" class="fs-5 p-3">ORDERS</div>
+
+        <div class=" col-12">
+            <div class="col-8 m-3 border rounded-3" *ngFor="let item of orderList let i = index">
+                <div style="border-bottom: 1px solid rgb(228, 228, 228); font-size: 15px;" class="p-2">ORDER #2423 </div>
+                <div class="p-3" style="font-size: 14px;">
+                    <div>{{item.amount_of_items}} ITEMS</div>
+                    <div class="text-secondary">Placed on: {{item.created_at}}</div>
+                    <div class="text-secondary">Total: N {{item.price_total}}</div>
+                    <div>Status: PENDING</div>
+                    <button class="btn border mt-1" style="font-size: 13px;" (click)="view(i)"> VIEW</button>
+                    
+                </div>
+            </div>
+            
+        </div>
+       }
+
+        <!-- ORDER LIST END  -->
+        @if(!backk){
+            <div style="border-bottom: 1px solid rgb(228, 228, 228);" class="fs-5"><span class="btn btn-secondary rounded-0" (click)="back()"><--</span> <span class="px-3">ORDERS</span></div>
+            <div class="col-8 m-3 border rounded-3 d-flex overflow-hidden" style="height: 110px;" *ngFor="let item of orderArray">
+               <img src={{item.product_image}} alt="an image" width="170px" class="me-2">
+            <div class="p-3" style="font-size: 14px;">
+               <div>{{item.product_name}} </div>
+               <div class="text-secondary">Quantity: {{item.quantity}}</div>
+               <div class="text-secondary">Price: N {{item.sale_price}} <s class="px-1"><small>{{item.price}}</small></s></div>
+               <div>Total: N{{item.total}}</div>    
+           </div>
+   
+           </div>
+   
+        }
+
+    </div>
+</div>
+</div>

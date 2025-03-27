@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li class="sidebar-item" (click)="select($event)">
-                <a routerLink="seller_dashboard" class="sidebar-link fs-6">
+                <a routerLink="/seller_dashboard/profile" class="sidebar-link fs-6">
                     <i class="lni lni-agenda"></i>
                     <span>Profile</span>
                 </a>
@@ -71,7 +71,7 @@
             </button>
             <div  class="col-12">
                     <div class="float-end d-flex justify-content-center align-items-center hover mx-2 px-3 my-1 rounded-3" style="cursor: pointer; z-index: 3;">
-                        <div class="fw-medium mx-1 text-sm-white"> Abdulllahi </div>
+                        <div class="fw-medium mx-1 text-sm-white"> {{profileInfo.firstname}} </div>
                         <span style="width: 45px; height: 45px;" class="rounded-circle overflow-hidden">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-3bJfR-R5MugSOzqTOzuW4j7KdDxAvAePaQ&s" alt="" style="height: 45px;">
                         </span>  

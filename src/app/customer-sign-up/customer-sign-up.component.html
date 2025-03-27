@@ -1,0 +1,59 @@
+     <div class="row row-cols-md-2">
+    <div 
+    class="d-flex justify-content-center align-items-center w-50 mx-auto"
+    >
+    <img src="assets/ill.svg" alt="" class="" style="width: 90%; right: 0;">
+    
+    </div>
+    <div class="d-flex justify-content-center align-items-center px-5 px-sm-0">
+        <div class="container col-lg-9 col-sm-11 col-md-10 my-4" >
+            <form action="" (submit)="signup()" [formGroup]="signupGroup" >
+                <div class="d-flex justify-content-center align-items-center d-none d-md-flex">
+                    <span class="rounded-circle p-1" >
+                        <img src="assets/transparent-online-shopping-clear-concise-image-for-online-shopping-advertisi6589406f953499.7984137717034937436112.png" alt="" width="100px">
+                    </span>
+                </div>
+                <h1 class="text-center">Register an account</h1>
+                <p><small class="fw-light text-center fs-6 d-flex align-items-center justify-content-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem delectus eum aut vitae, corrupti cumque </small></p>
+                <div >
+                    <mat-form-field  appearance="outline" class="w-100">
+                        <span matTextPrefix><img src="https://img.icons8.com/?size=100&id=23264&format=png&color=C6C6C6" alt="" width="27">&nbsp;&nbsp;&nbsp;</span>
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="Placeholder" formControlName="firstname">
+                        <mat-hint></mat-hint>
+                      </mat-form-field>
+                </div>
+                <div>
+
+                    <mat-form-field appearance="outline"  class="w-100">
+                        <span matTextPrefix><img src="https://img.icons8.com/?size=100&id=12580&format=png&color=C6C6C6" alt="" width="27">&nbsp;&nbsp;&nbsp;</span>
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Placeholder" formControlName="email">
+                        <mat-hint></mat-hint>
+                      </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline"  class="w-100">
+                        <span matTextPrefix><img src="https://img.icons8.com/?size=100&id=94&format=png&color=C6C6C6" alt="" width="27">&nbsp;&nbsp;&nbsp;</span>
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Placeholder" formControlName="password" type="password">
+                        <mat-hint></mat-hint>
+                      </mat-form-field>
+                </div>
+                <a href="" style="text-decoration: none;"><div style="color: rgb(3, 22, 51);" class="pb-3">Forgot Password</div></a>
+    
+                <div>
+                    <button mat-stroked-button class="rounded-6 text-white w-100 fw-bold py-4" style="background-color: #033b8f;" type="submit">REGISTER</button>
+                </div>
+                <div class="my-1">
+                    <span>Already have an account? </span><a routerLink="/customer_signin" style="text-decoration: none;"><span style="color: #031633;" class="py-2">Sign In</span></a>
+                </div>
+
+                    
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    

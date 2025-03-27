@@ -1,0 +1,157 @@
+
+.cart-btn{
+    color: #044387;
+   }
+   .cart-btn:hover{
+    background-color: #044387;
+    color: white;
+   }
+  ul li a{
+     
+      transition-duration: 0.2s;
+  }
+  ul li a:hover{
+    color: #044087;
+  }
+  
+  .hero{
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("https://www.meteorelectrical.com/media/wysiwyg/dev.jpeg");
+  }
+  .change-style{
+      background-color: rgba(255, 255, 255);
+      transition-duration: 0.5s;
+      box-shadow: 0 0 10px grey;
+    
+  }
+  .change-style a{
+      color: white;
+  }
+  .change-style i{
+      color: white;
+  }
+  
+  .default-style{
+      background-color: #031633;
+      transition-duration: 0.5s;
+      border-radius: 0px;
+      width: 100%;
+  }
+  .default-style a{
+      color: rgb(255, 255, 255);
+  }
+  .default-style i{
+      color: rgb(255, 255, 255);
+  }
+  
+  
+  .hero-text{
+      font-size: 4rem; 
+      color: rgb(234, 232, 226);
+  }
+  .hero-section{
+      height: 75vh;
+  }
+  .custom-badge .mat-badge-content {
+      background-color: rgb(213, 3, 3); 
+      color: white; 
+    }
+    .custom-badge{
+      border: none;
+      background-color: transparent;
+    }
+    .my-nav{
+      z-index: 1;
+    }
+    .my-border{
+      background-color: #fafafa;
+      transition-duration: 0.3s;
+      z-index: -2;
+    }
+    .my-rounded{
+      border-radius: 5px 5px 0 0 ;
+      transition-duration: 0.3s;
+    }
+    .my-rounded:hover{
+      scale: 1.2;
+      z-index: -2;
+    }
+    .font-14px{
+      font-size: 14px;
+    }
+    .font-13px{
+      font-size: 13px;
+    }
+    .font-12px{
+      font-size: 12px;
+    }
+    .bg-section{
+      background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url("https://welpix.b-cdn.net/wp-content/uploads/2024/03/The-art-of-storytelling-in-electronic-product-photography.webp");
+      height: 80vh;
+      background-size: contain;
+    }
+    .r-card{
+      background-image: url("https://cdn.tgdd.vn/Files/2020/12/28/1316646/apple-watch-series-6-faydali-ozellik-e1583788673393_1280x720-800-resize.jpg");
+      transition-duration: 0.3s;
+    }
+    .r-card:hover{
+      background-image: linear-gradient(rgba(0, 0,0,0.3), rgba(0, 0,0,0.5)), url("https://cdn.tgdd.vn/Files/2020/12/28/1316646/apple-watch-series-6-faydali-ozellik-e1583788673393_1280x720-800-resize.jpg");
+    }
+    .r-card2{
+      background-image: url("https://images.pexels.com/photos/6023354/pexels-photo-6023354.jpeg?auto=compress&cs=tinysrgb&w=600");
+      background-size: cover;
+      transition-duration: 1s;
+  
+      
+    }
+    .r-card2:hover{
+      background-size: cover;
+      background-image: linear-gradient(rgba(0, 0,0,0.3), rgba(0, 0,0,0.5)), url("https://images.pexels.com/photos/6023354/pexels-photo-6023354.jpeg?auto=compress&cs=tinysrgb&w=600");
+      transition-duration: 0.3s;
+    }
+    .white-btn{
+      font-weight: lighter;
+      border-radius: 50%;
+      height: 90px;
+      width: 90px;
+      border: 1px solid white;
+      backdrop-filter: blur(20px);
+      color: white;
+      background-color: transparent;
+    }
+  
+  @media (max-width:768px) {
+  .my-nav{
+      width: 100%;
+  }
+  .p-card{
+    height: 115px;
+  }
+  .mobile-hide{
+      display: none;
+  }
+  .hero-text{
+      font-size: 10vw;
+  }
+  .cart-btn{
+    padding-right: 20px;
+  }
+  
+  
+  
+  
+  .bg-section{
+    height: 60vh;
+  }
+  }
+  @media (min-width:768px) {
+    .p-card{
+      height: 160px;
+    }
+  .my-nav{
+      width: 100%;
+  }
+  .hide{
+      display: none;
+  }
+  
+  }

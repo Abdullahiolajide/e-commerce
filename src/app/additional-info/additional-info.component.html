@@ -23,7 +23,7 @@
         <ng-template matStepLabel>Fill out your Phone Number</ng-template>
         <mat-form-field appearance="outline" class="col-12">
           <mat-label>Phone</mat-label>
-          <input matInput placeholder="Ex. 09039834937" formControlName="firstCtrl">
+          <input matInput placeholder="Ex. 09039834937" formControlName="phone_number">
         </mat-form-field>
         <div class="mx-auto">
           <button mat-button matStepperPrevious class="col-5 border mx-1">Back</button>
@@ -35,11 +35,11 @@
       <form [formGroup]="secondFormGroup" class="col-6 mx-auto">
         <mat-form-field appearance="outline"  class="col-12">
           <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY">
+          <input matInput formControlName="address" placeholder="Ex. 1 Main St, New York, NY">
         </mat-form-field>
         <mat-form-field appearance="outline" class="col-12">
           <mat-label>Zip Code</mat-label>
-          <input matInput formControlName="thirdCtrl" placeholder="Ex. 201292" type="number">
+          <input matInput formControlName="zipcode" placeholder="Ex. 201292" type="number">
         </mat-form-field>
         <div class="mx-auto">
           <button mat-button matStepperPrevious class="col-5 border mx-1">Back</button>

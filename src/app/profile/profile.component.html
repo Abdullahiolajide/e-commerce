@@ -1,0 +1,51 @@
+<div >
+    <app-sidenav style="position: absolute;"></app-sidenav>
+  </div>
+  <div class="content">
+   <div class="fw-bold">Profile</div>
+    <div class="my-3 row">
+            <mat-form-field appearance="outline" class="col-lg-6 col-sm-11">
+              <mat-label>Firstame</mat-label>
+              <input matInput placeholder="Placeholder" value="Abdullahi Olajide" [disabled]="true"
+              value={{profileInfo.firstname}}>
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-lg-6 col-sm-11">
+                <mat-label>Lastname</mat-label>
+                <input matInput placeholder="Placeholder" value="Abdullahi Olajide" [disabled]="true"
+                value={{profileInfo.lastname}}>
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+         
+            <mat-form-field appearance="outline" class="col-lg-6 col-sm-11">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Placeholder"  (keyup)="showEdit()" [(ngModel)]="email">
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+         
+            <mat-form-field appearance="outline" class="col-lg-6 col-sm-11">
+              <mat-label>Phone</mat-label>
+              <input matInput placeholder="Placeholder" (keyup)="showEdit()" [(ngModel)]="phoneNumber">
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+         
+        
+            <mat-form-field appearance="outline" class="col-lg-6 col-sm-11">
+              <mat-label>Address</mat-label>
+              <input matInput placeholder="Placeholder"  (keyup)="showEdit()" [(ngModel)]="address">
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          
+            <mat-form-field appearance="outline" class="col-lg-6 col-sm-11">
+              <mat-label>ZIPCODE</mat-label>
+              <input matInput placeholder="Placeholder"  (keyup)="showEdit()" [(ngModel)]="zipcode">
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+         
+    </div>
+
+    <button mat-button class="border py-1 col-6 mx-auto fw-bold border-dark" *ngIf="showEditBtn == true" (click)="saveChanges()">SAVE CHANGES</button>
+  
+    
+  
+  </div>

@@ -1,0 +1,19 @@
+/* .bg{
+    background-image: url('/assets/Ecommerce\ checkout\ laptop-amico.png');
+    background-size: contain;
+    back
+} */
+.mat-form-field {
+    height: 10px; /* Adjust height */
+  }
+  
+  .mat-form-field-infix {
+    padding: 0 9px; /* Adjust padding */
+    height: 30px; /* Matches the container height */
+  }
+  
+  .mat-input-element {
+    line-height: 1; /* Adjust text line height */
+    padding: 2px 0; /* Reduce inner padding */
+  }
+  

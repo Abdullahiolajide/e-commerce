@@ -1,0 +1,67 @@
+.custom-badge .mat-badge-content {
+    background-color: rgb(213, 3, 3); 
+    color: white; 
+  }
+  .custom-badge{
+    border: none;
+    background-color: transparent;
+  }
+  nav ul li a{
+    color: white;
+  }
+  nav{
+    color: white;
+  }
+  nav i{
+    color: white;
+  }
+  .mabtn{
+    width: 30px;
+    height: 30px;
+  }
+  .sp{
+    width: 150px;
+  }
+
+  @media (max-width:768px) {
+  
+    .mobile-hide{
+        display: none;
+    }
+    .hero-text{
+        font-size: 10vw;
+    }
+    .cc{
+      height: 100px;
+    }
+    .mbf{
+      font-size: 13px;
+    }
+    .sp{
+      width: 100px;
+      height: 30px;
+    }
+    .mabtn{
+      width: 24px;
+      height: 24px;
+    }
+    
+    
+    
+    
+    .bg-section{
+      height: 60vh;
+    }
+  }
+  @media (min-width:768px) {
+      .cc{
+        height: 150px;
+      }
+    
+    .hide{
+        display: none;
+    }
+   
+    
+    }
+   

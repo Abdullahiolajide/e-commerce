@@ -1,0 +1,22 @@
+<main>
+    <div class="d-flex justify-content-center align-items-center" style="height:50vh;">
+        <div>
+            <h2 *ngIf="!status">Verifying Transcation...</h2>
+            <h2 *ngIf="status">Transaction Successful.</h2>
+            <div *ngIf="!status" class="spinner mx-auto" id="checkk" style="transition-duration: 0.5s; border: 5px solid black; border-top: 5px solid rgb(255, 255, 255); height: 40px; width: 40px;"></div>
+            <div class=" mx-auto" *ngIf="status" 
+            style="
+            border: 5px solid rgb(0, 255, 102); 
+            border-top: 5px solid transparent; 
+            border-right: 5px solid transparent; 
+            border-left: 8px solid rgb(0, 255, 102); 
+            height: 35px; 
+            width: 80px;
+            transform: rotate(330deg);
+            margin-bottom: 30px;
+            "></div>
+            <h6 class="mt-5 pt-3 text-center" *ngIf="status">Redirecting in {{count}}s</h6>
+
+        </div>
+    </div>
+</main>
